@@ -1,0 +1,1349 @@
+ודבר <!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סדנאות קוסמטיקה טבעית | יופי. טבע. אור</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --celadon: #baf2bbff;
+            --celadon-2: #baf2d8ff;
+            --pale-sky: #bad7f2ff;
+            --soft-blossom: #f2bac9ff;
+            --pearl-beige: #f2e2baff;
+            --text-dark: #4a4a4a;
+            --text-light: #6b6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background: linear-gradient(135deg, var(--celadon) 0%, var(--celadon-2) 50%, var(--pale-sky) 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Amatic SC', cursive;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #7cb87d;
+        }
+
+        nav a {
+            margin-right: 30px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7cb87d;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=1920') center/cover;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(186, 242, 187, 0.9) 0%, rgba(186, 242, 216, 0.85) 50%, rgba(242, 186, 201, 0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--soft-blossom);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(242, 186, 201, 0.4);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(242, 186, 201, 0.5);
+        }
+
+        /* Features */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .feature p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Workshops Section */
+        .workshops-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .workshops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .workshop-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .workshop-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .workshop-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .workshop-card:hover .workshop-image img {
+            transform: scale(1.1);
+        }
+
+        .workshop-content {
+            padding: 25px;
+        }
+
+        .workshop-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .workshop-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .workshop-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .workshop-duration {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .workshop-duration::before {
+            content: '⏱️ ';
+        }
+
+        .workshop-price {
+            font-weight: 600;
+            color: #7cb87d;
+            font-size: 1.2rem;
+        }
+
+        /* Registration Form */
+        .registration-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--soft-blossom) 0%, var(--pearl-beige) 100%);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .form-container > p {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group label .required {
+            color: var(--soft-blossom);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: 'Heebo', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--celadon);
+            box-shadow: 0 0 0 4px rgba(186, 242, 187, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--celadon) 0%, var(--celadon-2) 100%);
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(186, 242, 187, 0.4);
+        }
+
+        /* Flash Messages */
+        .flash-messages {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .flash {
+            padding: 15px 25px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .flash.success {
+            background: var(--celadon);
+            color: #2d6b2d;
+        }
+
+        .flash.error {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            line-height: 45px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--soft-blossom);
+        }
+
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .workshops-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+                width: 100%;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 0.95rem;
+            }
+
+
+            .calendar-wrapper {
+                width: 100% !important;
+                padding: 20px 15px !important;
+            }
+
+            .calendar-wrapper iframe,
+            .calendar-wrapper button,
+            .calendar-wrapper > div {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: unset !important;
+            }
+
+            /* הגדלת ה-popup של גוגל קלנדר במובייל */
+            [data-aycd],
+            [class*="calendar"] iframe,
+            iframe[src*="calendar.google.com"] {
+                width: 100vw !important;
+                max-width: 100vw !important;
+                left: 10px !important;
+                right: auto !important;
+                transform: none !important;
+            }
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            font-size: 1.6rem;
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Decorative Elements */
+        .leaf-decoration {
+            position: fixed;
+            opacity: 0.1;
+            pointer-events: none;
+            font-size: 150px;
+            z-index: 0;
+        }
+
+        .leaf-1 { top: 10%; right: 5%; }
+        .leaf-2 { bottom: 20%; left: 3%; }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/972501234567" target="_blank" class="whatsapp-btn" title="צרי קשר בוואטסאפ">💬</a>
+
+    <!-- Decorative leaves -->
+    <div class="leaf-decoration leaf-1">🌿</div>
+    <div class="leaf-decoration leaf-2">🍃</div>
+
+    <!-- Flash Messages -->
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">✨ יופי. <span>טבע. אור</span></a>
+            <nav>
+                <a href="#facial">טיפולי פנים</a>
+                <a href="#register">הרשמה</a>
+                <a href="#workshops">רישום לסדנאות</a>
+                <a href="#about">אודות</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🌿 סדנאות קוסמטיקה טבעית</h1>
+            <p>
+                גלי את עולם הקוסמטיקה הטבעית והכיני בעצמך מוצרי טיפוח
+                בריאים ויפים. סדנאות מעשירות בקבוצות קטנות ואינטימיות.
+            </p>
+            <a href="#register" class="hero-btn">הרשמי עכשיו ✨</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="feature">
+            <div class="feature-icon">🌱</div>
+            <h3>100% טבעי</h3>
+            <p>חומרי גלם טבעיים ואורגניים</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">👩‍🏫</div>
+            <h3>הדרכה מקצועית</h3>
+            <p>מדריכות מוסמכות ומנוסות</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎁</div>
+            <h3>לוקחים הביתה</h3>
+            <p>את כל מה שיצרתן בסדנה</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">💝</div>
+            <h3>חוויה מיוחדת</h3>
+            <p>אווירה נעימה עם כיבוד קל</p>
+        </div>
+    </section>
+
+    <!-- Workshops Section -->
+    <section id="workshops" class="workshops-section">
+        <div class="section-title">
+            <h2>🌸 הסדנאות שלנו</h2>
+            <p>בחרי את הסדנה שמתאימה לך</p>
+        </div>
+
+        <div class="workshops-grid">
+            <div class="workshop-card">
+                <div class="workshop-image">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400" alt="סדנת שפתונים ובלמים טבעיים">
+                </div>
+                <div class="workshop-content">
+                    <h3>סדנת שפתונים ובלמים טבעיים</h3>
+                    <p>למדו להכין שפתונים צבעוניים ובלמים מזינים משמנים טבעיים, שעוות דבורים וצבעים מינרליים.</p>
+                    <div class="workshop-meta">
+                        <span class="workshop-duration">3 שעות</span>
+                        <span class="workshop-price">280 ₪</span>
+                    </div>
+                </div>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-image">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400" alt="סדנת קרמים לפנים">
+                </div>
+                <div class="workshop-content">
+                    <h3>סדנת קרמים לפנים</h3>
+                    <p>הכינו קרם פנים מותאם אישית לסוג העור שלכן עם שמנים אתריים ומרכיבים פעילים טבעיים.</p>
+                    <div class="workshop-meta">
+                        <span class="workshop-duration">4 שעות</span>
+                        <span class="workshop-price">350 ₪</span>
+                    </div>
+                </div>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-image">
+                    <img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?w=400" alt="סדנת סבונים בעבודת יד">
+                </div>
+                <div class="workshop-content">
+                    <h3>סדנת סבונים בעבודת יד</h3>
+                    <p>צרו סבונים יפהפיים בשיטת ה-Cold Process עם שמנים נבחרים, צמחי מרפא וניחוחות טבעיים.</p>
+                    <div class="workshop-meta">
+                        <span class="workshop-duration">4 שעות</span>
+                        <span class="workshop-price">320 ₪</span>
+                    </div>
+                </div>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-image">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400" alt="סדנת שמנים אתריים וארומתרפיה">
+                </div>
+                <div class="workshop-content">
+                    <h3>סדנת שמנים אתריים וארומתרפיה</h3>
+                    <p>היכרות מעמיקה עם עולם השמנים האתריים והכנת מוצרים לטיפוח הגוף והנפש.</p>
+                    <div class="workshop-meta">
+                        <span class="workshop-duration">3 שעות</span>
+                        <span class="workshop-price">300 ₪</span>
+                    </div>
+                </div>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-image">
+                    <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=400" alt="סדנת פצצות אמבטיה">
+                </div>
+                <div class="workshop-content">
+                    <h3>סדנת פצצות אמבטיה</h3>
+                    <p>הכינו פצצות אמבטיה צבעוניות ומבעבעות עם שמנים מזינים, מלחים ים המלח וניחוחות משכרים.</p>
+                    <div class="workshop-meta">
+                        <span class="workshop-duration">2.5 שעות</span>
+                        <span class="workshop-price">250 ₪</span>
+                    </div>
+                </div>
+            </div>
+            <div class="workshop-card">
+                <div class="workshop-image">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400" alt="סדנת מוצרי שיער טבעיים">
+                </div>
+                <div class="workshop-content">
+                    <h3>סדנת מוצרי שיער טבעיים</h3>
+                    <p>למדו להכין שמפו מוצק, מסכות הזנה ושמני שיער מרכיבים טבעיים ובריאים.</p>
+                    <div class="workshop-meta">
+                        <span class="workshop-duration">3.5 שעות</span>
+                        <span class="workshop-price">320 ₪</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facial Treatment Section -->
+    <section id="facial" style="padding: 80px 20px; background: linear-gradient(135deg, var(--pearl-beige) 0%, var(--soft-blossom) 100%); text-align: center;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <h2 style="font-family: 'Amatic SC', cursive; font-size: 3rem; color: var(--text-dark); margin-bottom: 15px;">🌸 טיפולי פנים אישיים</h2>
+            <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
+                מעבר לסדנאות, אנחנו מציעות טיפולי פנים אישיים בשיטות טבעיות ומפנקות.
+                כל טיפול מותאם אישית לצרכי העור שלך.
+            </p>
+            <p style="color: var(--text-light); font-size: 1rem; margin-bottom: 40px;">
+                🕐 משך טיפול: כשעה | 📍 בסטודיו שלנו
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="https://calendar.google.com/calendar/appointments/AcZssZ11pee3ozBJzTd0qkqGE6wjOTdf8wZXte69XXY=?gv=true"
+                   target="_blank"
+                   style="display: inline-block; background: #7cb87d; color: white; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(124,184,125,0.4); transition: transform 0.2s, box-shadow 0.2s;"
+                   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(124,184,125,0.5)'"
+                   onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 15px rgba(124,184,125,0.4)'">
+                    🌿 קביעת פגישה ביומן גוגל
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>🌿 קצת עלינו</h2>
+                <p>
+                    ברוכות הבאות ל"יופי. טבע. אור" - הסטודיו שלנו לקוסמטיקה טבעית!
+                    אנחנו מאמינות שכל אישה יכולה ליצור בעצמה מוצרי טיפוח בריאים, יעילים ויפים.
+                </p>
+                <p>
+                    בסדנאות שלנו תלמדו לא רק להכין מוצרים, אלא גם להבין את המרכיבים
+                    ואת התאמתם לסוגי עור שונים. הידע שתרכשו ילווה אתכן לכל החיים.
+                </p>
+                <p>
+                    הסדנאות מתקיימות בסטודיו הביתי שלנו בתל אביב, באווירה
+                    נעימה ואינטימית. מגיעות עם חברות? מושלם!
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600" alt="אודות הסטודיו">
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="register" class="registration-section">
+        <div class="form-container">
+            <h2>📝 הרשמה לסדנה</h2>
+            <p>מלאי את הפרטים ונחזור אלייך בהקדם</p>
+
+            <form id="registration-form">
+                <div class="form-group">
+                    <label>שם מלא <span class="required">*</span></label>
+                    <input type="text" name="entry.606349116" required placeholder="הכניסי את שמך המלא">
+                </div>
+
+                <div class="form-group">
+                    <label>אימייל <span class="required">*</span></label>
+                    <input type="email" name="entry.555112833" required placeholder="example@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>טלפון <span class="required">*</span></label>
+                    <input type="tel" name="entry.1943204336" required placeholder="050-0000000">
+                </div>
+
+                <div class="form-group">
+                    <label>בחירת סדנה <span class="required">*</span></label>
+                    <select name="entry.1397496996" required>
+                        <option value="">-- בחרי סדנה --</option>
+                        <option value="סדנת שפתונים ובלמים טבעיים">סדנת שפתונים ובלמים טבעיים - 280 ₪</option>
+                        <option value="סדנת קרמים לפנים">סדנת קרמים לפנים - 350 ₪</option>
+                        <option value="סדנת סבונים בעבודת יד">סדנת סבונים בעבודת יד - 320 ₪</option>
+                        <option value="סדנת שמנים אתריים וארומתרפיה">סדנת שמנים אתריים וארומתרפיה - 300 ₪</option>
+                        <option value="סדנת פצצות אמבטיה">סדנת פצצות אמבטיה - 250 ₪</option>
+                        <option value="סדנת מוצרי שיער טבעיים">סדנת מוצרי שיער טבעיים - 320 ₪</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>הערות נוספות</label>
+                    <textarea name="entry.260277368" placeholder="שאלות, בקשות מיוחדות, או סתם להגיד שלום..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">שלחי הרשמה 💚</button>
+                <div id="form-success" style="display:none; text-align:center; margin-top:20px; padding:15px; background:var(--celadon); border-radius:15px; color:#2d6b2d; font-weight:500;">
+                    ההרשמה התקבלה בהצלחה! ניצור איתך קשר בהקדם 💚
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>✨ יופי. טבע. אור</h3>
+            <div class="contact-info">
+                <p>📍 תל אביב, ישראל</p>
+                <p>📞 050-123-4567</p>
+                <p>✉️ hello@natural-cosmetics.co.il</p>
+            </div>
+            <div class="social-links">
+                <a href="#" title="Instagram">📸</a>
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="WhatsApp">💬</a>
+            </div>
+            <p class="copyright">© 2024 יופי. טבע. אור. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-hide flash messages
+        setTimeout(() => {
+            const flashes = document.querySelectorAll('.flash');
+            flashes.forEach(flash => {
+                flash.style.opacity = '0';
+                flash.style.transition = 'opacity 0.5s';
+                setTimeout(() => flash.remove(), 500);
+            });
+        }, 5000);
+
+        // Google Apps Script submission
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('.submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'שולחת...';
+
+            const data = {
+                full_name: form.querySelector('[name="entry.606349116"]').value,
+                email:     form.querySelector('[name="entry.555112833"]').value,
+                phone:     form.querySelector('[name="entry.1943204336"]').value,
+                workshop:  form.querySelector('[name="entry.1397496996"]').value,
+                message:   form.querySelector('[name="entry.260277368"]').value
+            };
+
+            fetch('https://script.google.com/macros/s/AKfycbxXKGw9hX5yUZJDQO6mR7wnXVDQsnA2U8u_etstOkh8KA1sfqFB03csMvqVk4He0Td7GA/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            }).then(() => {
+                form.reset();
+                btn.disabled = false;
+                btn.textContent = 'שלחי הרשמה 💚';
+                document.getElementById('form-success').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('form-success').style.display = 'none';
+                }, 5000);
+            }).catch(() => {
+                btn.disabled = false;
+                btn.textContent = 'שלחי הרשמה 💚';
+                alert('אירעה שגיאה, נסי שוב');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <!-- Chat Bot -->
+    <style>
+        .chat-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 25px;
+            width: auto;
+            height: 46px;
+            background: linear-gradient(135deg, var(--soft-blossom), var(--pearl-beige));
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            font-size: 0.85rem;
+            font-family: 'Heebo', sans-serif;
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 0 20px 0 16px;
+            z-index: 999;
+            transition: transform 0.2s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .chat-btn:hover { transform: scale(1.05); }
+        .chat-btn-icon {
+            width: 28px;
+            height: 28px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 160px;
+            right: 25px;
+            width: 320px;
+            max-height: 460px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: none;
+            flex-direction: column;
+            z-index: 999;
+            overflow: hidden;
+        }
+        .chat-window.open { display: flex; }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--soft-blossom), var(--pearl-beige));
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-header span { font-weight: 600; color: var(--text-dark); font-size: 0.95rem; }
+        .chat-close { background: none; border: none; cursor: pointer; font-size: 1.2rem; }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .msg {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 15px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+        .msg.bot {
+            background: #f5f5f5;
+            align-self: flex-start;
+            border-bottom-right-radius: 4px;
+        }
+        .msg.user {
+            background: linear-gradient(135deg, var(--celadon), var(--celadon-2));
+            align-self: flex-end;
+            border-bottom-left-radius: 4px;
+        }
+        .chat-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 0 15px 10px;
+        }
+        .chat-opt-btn {
+            background: white;
+            border: 1.5px solid var(--soft-blossom);
+            border-radius: 20px;
+            padding: 6px 13px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            transition: all 0.2s;
+            font-family: 'Heebo', sans-serif;
+        }
+        .chat-opt-btn:hover { background: var(--soft-blossom); }
+
+        .chat-input-row {
+            display: flex;
+            padding: 10px 15px;
+            gap: 8px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .chat-input {
+            flex: 1;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            outline: none;
+            font-family: 'Heebo', sans-serif;
+        }
+        .chat-input:focus { border-color: var(--soft-blossom); }
+        .chat-send {
+            background: linear-gradient(135deg, var(--soft-blossom), var(--pearl-beige));
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    </style>
+
+    <button class="chat-btn" onclick="toggleChat()" title="שאלי אותי">
+        <span class="chat-btn-icon">💬</span>
+        עזרה בבחירת סדנה
+    </button>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <span>🌿 עוזרת הסדנאות</span>
+            <button class="chat-close" onclick="toggleChat()">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-options" id="chatOptions"></div>
+        <div class="chat-input-row">
+            <input class="chat-input" id="chatInput" placeholder="כתבי הודעה..." onkeydown="if(event.key==='Enter') sendUserMsg()">
+            <button class="chat-send" onclick="sendUserMsg()">➤</button>
+        </div>
+    </div>
+
+    <script>
+    // --- נתוני הסדנאות עם תגיות לניקוד ---
+    const workshops = [
+        {
+            id: 0, name: 'סדנת שפתונים ובלמים טבעיים',
+            keywords: ['שפתון','שפתיים','בלם','צבע','איפור','מייקאפ'],
+            duration: '3 שעות', price: '280 ₪',
+            desc: 'שפתונים צבעוניים ובלמים מזינים משמנים טבעיים, שעוות דבורים וצבעים מינרליים',
+            tags: { bodyPart: 'face', vibe: 'beauty', time: 'short', budget: 'low', social: 'solo', gift: true, kids: false }
+        },
+        {
+            id: 1, name: 'סדנת קרמים לפנים',
+            keywords: ['פנים','קרם','עור','לחות','טיפוח'],
+            duration: '4 שעות', price: '350 ₪',
+            desc: 'קרם פנים מותאם אישית לסוג העור שלך עם שמנים אתריים ומרכיבים פעילים',
+            tags: { bodyPart: 'face', vibe: 'care', time: 'long', budget: 'high', social: 'solo', gift: false, kids: false }
+        },
+        {
+            id: 2, name: 'סדנת סבונים בעבודת יד',
+            keywords: ['סבון','ניקוי','cold process','צמחים'],
+            duration: '4 שעות', price: '320 ₪',
+            desc: 'סבונים יפהפיים בשיטת Cold Process עם שמנים נבחרים וצמחי מרפא',
+            tags: { bodyPart: 'body', vibe: 'craft', time: 'long', budget: 'mid', social: 'group', gift: true, kids: false }
+        },
+        {
+            id: 3, name: 'סדנת שמנים אתריים וארומתרפיה',
+            keywords: ['שמן','ארומה','ריח','ניחוח','רוגע','סטרס','נפש'],
+            duration: '3 שעות', price: '300 ₪',
+            desc: 'עולם השמנים האתריים לטיפוח גוף ונפש, הכנת בשמים ומיקסים אישיים',
+            tags: { bodyPart: 'soul', vibe: 'relax', time: 'short', budget: 'mid', social: 'solo', gift: true, kids: false }
+        },
+        {
+            id: 4, name: 'סדנת פצצות אמבטיה',
+            keywords: ['אמבטיה','פצצה','בועות','ילדים','מתנה','מפנק'],
+            duration: '2.5 שעות', price: '250 ₪',
+            desc: 'פצצות אמבטיה צבעוניות ומבעבעות עם שמנים מזינים ומלחי ים המלח',
+            tags: { bodyPart: 'body', vibe: 'fun', time: 'short', budget: 'low', social: 'group', gift: true, kids: true }
+        },
+        {
+            id: 5, name: 'סדנת מוצרי שיער טבעיים',
+            keywords: ['שיער','שמפו','מסכה','קונדישן','הזנה','קרקפת'],
+            duration: '3.5 שעות', price: '320 ₪',
+            desc: 'שמפו מוצק, מסכות הזנה ושמני שיער ממרכיבים טבעיים ובריאים',
+            tags: { bodyPart: 'hair', vibe: 'care', time: 'mid', budget: 'mid', social: 'solo', gift: false, kids: false }
+        }
+    ];
+
+    // --- מערכת ניקוד: כל שאלה מוסיפה נקודות לסדנאות ---
+    const scoringRules = {
+        // שאלה 1: עם מי באה?
+        '👤 לבד': (w) => w.tags.social === 'solo' ? 3 : 0,
+        '👯 עם חברה/חברות': (w) => w.tags.social === 'group' ? 3 : 1,
+        '👨‍👩‍👧 עם הילדים': (w) => w.tags.kids ? 5 : -2,
+        '🎁 מחפשת מתנה': (w) => w.tags.gift ? 4 : 0,
+
+        // שאלה 2: מה הויב שמחפשת?
+        '💄 משהו יפה ומהנה': (w) => w.tags.vibe === 'beauty' || w.tags.vibe === 'fun' ? 4 : 0,
+        '🌿 טיפוח רציני לעצמי': (w) => w.tags.vibe === 'care' ? 4 : 0,
+        '🧘 הרפיה ורוגע': (w) => w.tags.vibe === 'relax' ? 5 : 0,
+        '🎨 יצירה ומלאכת יד': (w) => w.tags.vibe === 'craft' || w.tags.vibe === 'fun' ? 4 : 0,
+
+        // שאלה 3: איזה חלק בגוף?
+        '😊 פנים ועור': (w) => w.tags.bodyPart === 'face' ? 5 : 0,
+        '💆 גוף ורחצה': (w) => w.tags.bodyPart === 'body' ? 5 : 0,
+        '💇 שיער': (w) => w.tags.bodyPart === 'hair' ? 6 : 0,
+        '🌸 בכלל - גוף ונפש': (w) => w.tags.bodyPart === 'soul' ? 5 : 1,
+
+        // שאלה 4: כמה זמן?
+        '⚡ עד 3 שעות': (w) => w.tags.time === 'short' ? 3 : w.tags.time === 'mid' ? 1 : -1,
+        '🌅 לא נורא, עד 4 שעות': (w) => 2,
+        '🕰️ אני פנויה כל היום': (w) => w.tags.time === 'long' ? 2 : 1,
+    };
+
+    // --- לוגיקת שיחה ---
+    const questions = [
+        {
+            step: 'social',
+            msg: 'שלום! אני כאן לעזור לך למצוא את הסדנה המושלמת 🌿\nספרי לי — את מגיעה...',
+            options: ['👤 לבד', '👯 עם חברה/חברות', '👨‍👩‍👧 עם הילדים', '🎁 מחפשת מתנה']
+        },
+        {
+            step: 'vibe',
+            msgs: {
+                '👤 לבד': 'זמן איכות לעצמך 💛 מה הכי מדבר אלייך עכשיו?',
+                '👯 עם חברה/חברות': 'כיף לעשות דברים ביחד! מה הן אוהבות?',
+                '👨‍👩‍👧 עם הילדים': 'נחמד! מה חשוב לך שיצא מהסדנה?',
+                '🎁 מחפשת מתנה': 'מחשבה נהדרת! מה מתאים לאותה אישה?'
+            },
+            options: ['💄 משהו יפה ומהנה', '🌿 טיפוח רציני לעצמי', '🧘 הרפיה ורוגע', '🎨 יצירה ומלאכת יד']
+        },
+        {
+            step: 'bodyPart',
+            msg: 'ועל איזה אזור היית רוצה להתמקד?',
+            options: ['😊 פנים ועור', '💆 גוף ורחצה', '💇 שיער', '🌸 בכלל - גוף ונפש']
+        },
+        {
+            step: 'time',
+            msg: 'כמה זמן נוח לך לסדנה?',
+            options: ['⚡ עד 3 שעות', '🌅 לא נורא, עד 4 שעות', '🕰️ אני פנויה כל היום']
+        }
+    ];
+
+    let state = { step: 0, scores: workshops.map(() => 0), answers: {} };
+    let chatOpen = false;
+
+    function toggleChat() {
+        chatOpen = !chatOpen;
+        document.getElementById('chatWindow').classList.toggle('open', chatOpen);
+        if (chatOpen && document.getElementById('chatMessages').children.length === 0) {
+            startChat();
+        }
+    }
+
+    function startChat() {
+        state = { step: 0, scores: workshops.map(() => 0), answers: {} };
+        document.getElementById('chatMessages').innerHTML = '';
+        askQuestion(0);
+    }
+
+    function askQuestion(idx) {
+        const q = questions[idx];
+        let msg = q.msg;
+        if (q.msgs && state.answers[questions[idx - 1]?.step]) {
+            msg = q.msgs[state.answers[questions[idx - 1].step]] || q.msg || Object.values(q.msgs)[0];
+        }
+        setTimeout(() => {
+            addBotMsg(msg);
+            showOptions(q.options);
+        }, idx === 0 ? 0 : 400);
+    }
+
+    function handleOption(opt) {
+        addUserMsg(opt);
+        clearOptions();
+
+        const q = questions[state.step];
+        state.answers[q.step] = opt;
+
+        // הוסף נקודות לפי הכלל
+        if (scoringRules[opt]) {
+            workshops.forEach((w, i) => {
+                state.scores[i] += scoringRules[opt](w);
+            });
+        }
+
+        state.step++;
+        if (state.step < questions.length) {
+            askQuestion(state.step);
+        } else {
+            setTimeout(() => showResult(), 400);
+        }
+    }
+
+    function showResult() {
+        // מצא את הסדנה עם הניקוד הגבוה ביותר
+        const topIdx = state.scores.indexOf(Math.max(...state.scores));
+        const w = workshops[topIdx];
+
+        // מצא גם מקום שני לאופציה חלופית
+        const scoresWithIdx = state.scores.map((s, i) => ({ s, i })).sort((a, b) => b.s - a.s);
+        const runner = workshops[scoresWithIdx[1].i];
+
+        state.selectedWorkshop = w.name;
+        state.runnerWorkshop = runner.name;
+
+        addBotMsg('מעולה! ניתחתי את כל התשובות שלך... 🔍');
+        setTimeout(() => {
+            addBotMsg(`הסדנה שהכי מתאימה לך היא:<br><br>✨ <strong>${w.name}</strong><br><br>📝 ${w.desc}<br>🕐 ${w.duration} | 💰 ${w.price}`);
+            setTimeout(() => {
+                addBotMsg(`גם <strong>${runner.name}</strong> יכולה להתאים לך (${runner.price}) — רוצה לשמוע עליה?`);
+                showOptions(['✅ הירשמי לסדנה הראשונה', `💡 ספרי לי על "${runner.name.split(' ').slice(0,2).join(' ')}"`, '🔄 התחילי מחדש']);
+            }, 700);
+        }, 600);
+    }
+
+    function addBotMsg(text) {
+        const el = document.createElement('div');
+        el.className = 'msg bot';
+        el.innerHTML = text.replace(/\n/g, '<br>');
+        document.getElementById('chatMessages').appendChild(el);
+        scrollChat();
+    }
+
+    function addUserMsg(text) {
+        const el = document.createElement('div');
+        el.className = 'msg user';
+        el.textContent = text;
+        document.getElementById('chatMessages').appendChild(el);
+        scrollChat();
+    }
+
+    function showOptions(opts) {
+        const container = document.getElementById('chatOptions');
+        container.innerHTML = '';
+        opts.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'chat-opt-btn';
+            btn.textContent = opt;
+            btn.onclick = () => {
+                if (state.step >= questions.length) {
+                    handleResult(opt);
+                } else {
+                    handleOption(opt);
+                }
+            };
+            container.appendChild(btn);
+        });
+    }
+
+    function handleResult(opt) {
+        addUserMsg(opt);
+        clearOptions();
+        if (opt.startsWith('✅')) {
+            setTimeout(() => {
+                addBotMsg('מעבירה אותך לטופס 💚');
+                setTimeout(() => {
+                    const sel = document.querySelector('[name="entry.1397496996"]');
+                    if (sel) {
+                        Array.from(sel.options).forEach(o => {
+                            if (o.text.includes(state.selectedWorkshop.substring(0, 10))) o.selected = true;
+                        });
+                    }
+                    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+                    toggleChat();
+                }, 900);
+            }, 400);
+        } else if (opt.startsWith('💡')) {
+            const r = workshops.find(w => w.name === state.runnerWorkshop);
+            setTimeout(() => {
+                addBotMsg(`✨ <strong>${r.name}</strong><br><br>📝 ${r.desc}<br>🕐 ${r.duration} | 💰 ${r.price}`);
+                state.selectedWorkshop = r.name;
+                showOptions(['✅ הירשמי לסדנה הזו', '🔄 התחילי מחדש', '📋 כל הסדנאות']);
+            }, 400);
+        } else if (opt === '🔄 התחילי מחדש') {
+            setTimeout(() => startChat(), 400);
+        } else if (opt === '📋 כל הסדנאות') {
+            setTimeout(() => {
+                addBotMsg('בואי תסתכלי על כל הסדנאות שלנו 👇');
+                setTimeout(() => {
+                    document.getElementById('workshops').scrollIntoView({ behavior: 'smooth' });
+                    toggleChat();
+                }, 700);
+            }, 400);
+        }
+    }
+
+    function clearOptions() {
+        document.getElementById('chatOptions').innerHTML = '';
+    }
+
+    function scrollChat() {
+        const el = document.getElementById('chatMessages');
+        el.scrollTop = el.scrollHeight;
+    }
+
+    function sendUserMsg() {
+        const input = document.getElementById('chatInput');
+        const text = input.value.trim();
+        if (!text) return;
+        input.value = '';
+        addUserMsg(text);
+
+        const lower = text;
+        let matched = null;
+        for (const w of workshops) {
+            if (w.keywords.some(k => lower.includes(k))) { matched = w; break; }
+        }
+
+        setTimeout(() => {
+            if (matched) {
+                addBotMsg(`נשמע שאת מחפשת משהו כמו <strong>${matched.name}</strong> 🌿<br>${matched.desc}<br>🕐 ${matched.duration} | 💰 ${matched.price}`);
+                state.selectedWorkshop = matched.name;
+                state.step = questions.length;
+                showOptions(['✅ הירשמי עכשיו', '🔄 התחילי מחדש', '📋 כל הסדנאות']);
+            } else if (/שלום|היי|הי|בוקר|ערב/.test(lower)) {
+                addBotMsg('שלום! 😊');
+                startChat();
+            } else if (/מחיר|עולה|כמה/.test(lower)) {
+                addBotMsg('המחירים שלנו:<br>💄 שפתונים — 280 ₪<br>🌿 קרמים לפנים — 350 ₪<br>🧼 סבונים — 320 ₪<br>🌸 שמנים אתריים — 300 ₪<br>🛁 פצצות אמבטיה — 250 ₪<br>💇 מוצרי שיער — 320 ₪');
+            } else if (/כתובת|איפה|מיקום|הגעה/.test(lower)) {
+                addBotMsg('הסדנאות מתקיימות בסטודיו שלנו בתל אביב. לפרטי ההגעה נשלח לך לאחר ההרשמה 📍');
+            } else if (/ניסיון|מתחילה|לא יודעת/.test(lower)) {
+                addBotMsg('כל הסדנאות שלנו מתאימות למתחילות לגמרי! אנחנו מלמדות הכול מאפס 🌱');
+            } else {
+                addBotMsg('לא הצלחתי להבין 😊 בואי נעשה את השאלון הקצר ואמצא לך את הסדנה המושלמת:');
+                startChat();
+            }
+        }, 400);
+    }
+    </script>
+</body>
+</html>
